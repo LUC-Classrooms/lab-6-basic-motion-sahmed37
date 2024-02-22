@@ -21,10 +21,18 @@ function draw() {
   background(0, 0, 50); // deep blue
   
   ufo(x, y, d, r); // call the ufo() function (see below)
-  
   // add code here to change the ship location each frame
  x++; //add one to the value of x each frame reloaded
- r += 180;
+ r += -180; //add 180 to the value of r each frame
+ y -= .5;
+
+ if(x > width){
+  x = 0;
+ }
+ if(y < 0){
+  y = height;
+ }
+
 }
 
 function ufo(tempX, tempY, tempD, tempR){
